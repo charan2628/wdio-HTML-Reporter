@@ -86,85 +86,6 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./FeatureDiv.js":
-/*!***********************!*\
-  !*** ./FeatureDiv.js ***!
-  \***********************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _ScenarioDiv__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ScenarioDiv */ "./ScenarioDiv.js");
-
-
-var Feature = function Feature(_ref) {
-  var features = _ref.features;
-  return features.map(function (feature, i) {
-    return React.createElement("div", {
-      className: feature.result ? "passed" : "failed",
-      key: i
-    }, React.createElement("h1", null, feature.title), React.createElement("ul", null, React.createElement(_ScenarioDiv__WEBPACK_IMPORTED_MODULE_0__["default"], {
-      scenarios: feature.scenarios
-    })));
-  });
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Feature);
-
-/***/ }),
-
-/***/ "./ScenarioDiv.js":
-/*!************************!*\
-  !*** ./ScenarioDiv.js ***!
-  \************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _StepsDiv__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./StepsDiv */ "./StepsDiv.js");
-
-
-var Scenario = function Scenario(_ref) {
-  var scenarios = _ref.scenarios;
-  return scenarios.map(function (scenario, i) {
-    return React.createElement("li", {
-      className: scenario.result ? "passed scenario" : "failed scenario",
-      key: i
-    }, React.createElement("h2", null, scenario.title), React.createElement("ul", null, React.createElement(_StepsDiv__WEBPACK_IMPORTED_MODULE_0__["default"], {
-      steps: scenario.steps
-    })));
-  });
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Scenario);
-
-/***/ }),
-
-/***/ "./StepsDiv.js":
-/*!*********************!*\
-  !*** ./StepsDiv.js ***!
-  \*********************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-var Step = function Step(_ref) {
-  var steps = _ref.steps;
-  return steps.map(function (step, i) {
-    return React.createElement("li", {
-      className: step.result ? "passed step" : "failed step",
-      key: i
-    }, React.createElement("h3", null, step.title));
-  });
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Step);
-
-/***/ }),
-
 /***/ "./app.js":
 /*!****************!*\
   !*** ./app.js ***!
@@ -178,51 +99,159 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _FeatureDiv__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./FeatureDiv */ "./FeatureDiv.js");
+/* harmony import */ var _components_Feature__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/Feature */ "./components/Feature.js");
 
 
 
 window.React = react__WEBPACK_IMPORTED_MODULE_0___default.a;
 var data = [{
-  title: "FEATURE: THD Checkout page automation",
+  title: "Feature: THD Checkout page automation",
   result: true,
   scenarios: [{
-    title: "SCENARIO: Placing Order",
+    title: "Scenario: Placing Order",
     result: true,
     steps: [{
-      title: "WHEN: I search for an item",
+      title: "When: I search for an item",
       result: true
     }, {
-      title: "AND: I add the first item available to cart",
+      title: "And: I add the first item available to cart",
       result: true
     }, {
-      title: "THEN: I should have one item in cart",
-      result: true
-    }, {
-      title: "THEN: I proceed to checkout page and guest sign in",
+      title: "Then: I should have one item in cart",
       result: false
     }, {
-      title: "THEN: I fill the checkout page form and places the order",
+      title: "Then: I proceed to checkout page and guest sign in",
+      result: false
+    }, {
+      title: "Then: I fill the checkout page form and places the order",
       result: true
     }]
   }]
 }, {
-  title: "FEATURE: THD Loyality Page Automation",
+  title: "Feature: THD Loyality Page Automation",
   result: false,
   scenarios: [{
-    title: "SCENARIO: Siging in",
+    title: "Scenario: Siging in",
     result: true,
-    steps: []
+    steps: [{
+      title: "Given: Admin login page",
+      result: true
+    }, {
+      title: "When: I login using admin credentials",
+      result: true
+    }, {
+      title: "Then: I logged into admin page",
+      result: true
+    }]
   }, {
-    title: "SCENARIO: Adding Order",
+    title: "Scenario: Adding Program",
     result: false,
-    steps: []
+    steps: [{
+      title: "Given: Admin page",
+      result: true
+    }, {
+      title: "When: I add a program",
+      result: true
+    }, {
+      title: "Then: a program should be added",
+      result: false
+    }]
   }]
 }];
-Object(react_dom__WEBPACK_IMPORTED_MODULE_1__["render"])(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_FeatureDiv__WEBPACK_IMPORTED_MODULE_2__["default"], {
+Object(react_dom__WEBPACK_IMPORTED_MODULE_1__["render"])(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Feature__WEBPACK_IMPORTED_MODULE_2__["default"], {
   features: data,
   result: true
 }), document.getElementById('react-container'));
+
+/***/ }),
+
+/***/ "./components/Feature.js":
+/*!*******************************!*\
+  !*** ./components/Feature.js ***!
+  \*******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Scenario__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Scenario */ "./components/Scenario.js");
+
+
+var Feature = function Feature(_ref) {
+  var features = _ref.features;
+  return React.createElement("ul", {
+    id: "feature",
+    className: "main"
+  }, features.map(function (feature, i) {
+    return React.createElement("li", {
+      className: feature.result ? "feature passed" : "feature failed",
+      key: i
+    }, React.createElement("p", null, React.createElement("i", {
+      className: "fa fa-caret-down",
+      "aria-hidden": "true"
+    }), " ", feature.title), React.createElement("ul", {
+      id: "scenario"
+    }, React.createElement(_Scenario__WEBPACK_IMPORTED_MODULE_0__["default"], {
+      scenarios: feature.scenarios
+    })));
+  }));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Feature);
+
+/***/ }),
+
+/***/ "./components/Scenario.js":
+/*!********************************!*\
+  !*** ./components/Scenario.js ***!
+  \********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Steps__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Steps */ "./components/Steps.js");
+
+
+var Scenario = function Scenario(_ref) {
+  var scenarios = _ref.scenarios;
+  return scenarios.map(function (scenario, i) {
+    return React.createElement("li", {
+      className: scenario.result ? "scenario passed" : "scenario failed",
+      key: i
+    }, React.createElement("p", null, React.createElement("i", {
+      className: "fa fa-caret-down",
+      "aria-hidden": "true"
+    }), " ", scenario.title), React.createElement("ul", null, React.createElement(_Steps__WEBPACK_IMPORTED_MODULE_0__["default"], {
+      steps: scenario.steps
+    })));
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Scenario);
+
+/***/ }),
+
+/***/ "./components/Steps.js":
+/*!*****************************!*\
+  !*** ./components/Steps.js ***!
+  \*****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var Step = function Step(_ref) {
+  var steps = _ref.steps;
+  return steps.map(function (step, i) {
+    return React.createElement("li", {
+      className: step.result ? "step passed" : "step failed",
+      key: i
+    }, step.title);
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Step);
 
 /***/ }),
 

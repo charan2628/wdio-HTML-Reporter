@@ -1,56 +1,78 @@
 import React from 'react'
 import { render } from 'react-dom'
-import Feature from './FeatureDiv'
+import Feature from './components/Feature'
 
 window.React = React
 
 let data = [
     {
-        title: "FEATURE: THD Checkout page automation",
+        title: "Feature: THD Checkout page automation",
         result: true,
         scenarios: [{
-            title: "SCENARIO: Placing Order",
+            title: "Scenario: Placing Order",
             result: true,
             steps: [
                 {
-                    title: "WHEN: I search for an item",
+                    title: "When: I search for an item",
                     result: true
                 },
                 {
-                    title: "AND: I add the first item available to cart",
+                    title: "And: I add the first item available to cart",
                     result: true
                 },
                 {
-                    title: "THEN: I should have one item in cart",
-                    result: true
+                    title: "Then: I should have one item in cart",
+                    result: false
                 },
                 {
-                    title: "THEN: I proceed to checkout page and guest sign in",
+                    title: "Then: I proceed to checkout page and guest sign in",
                     result: false
                 }, 
                 {
-                    title: "THEN: I fill the checkout page form and places the order",
+                    title: "Then: I fill the checkout page form and places the order",
                     result: true
                 }
         ]
         }]
     },
     {
-        title: "FEATURE: THD Loyality Page Automation",
+        title: "Feature: THD Loyality Page Automation",
         result: false,
         scenarios: [
             {
-                title: "SCENARIO: Siging in",
+                title: "Scenario: Siging in",
                 result: true,
                 steps: [
-
+                    {
+                        title: "Given: Admin login page",
+                        result: true
+                    },
+                    {
+                        title: "When: I login using admin credentials",
+                        result: true
+                    },
+                    {
+                        title: "Then: I logged into admin page",
+                        result: true
+                    }
                 ]
             },
             {
-                title: "SCENARIO: Adding Order",
+                title: "Scenario: Adding Program",
                 result: false,
                 steps: [
-
+                    {
+                        title: "Given: Admin page",
+                        result: true
+                    }, 
+                    {
+                        title: "When: I add a program",
+                        result: true
+                    },
+                    {
+                        title: "Then: a program should be added",
+                        result: false
+                    }
                 ]
             }
         ]

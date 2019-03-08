@@ -1,0 +1,27 @@
+ul {
+    list-style: none
+  }
+  .step.passed {
+    color: #42f456;
+  }
+  .step.failed {
+    color: #f44141;
+  }
+  .scenario.passed {
+    color: #41b5f4;
+  }
+  .scenario.failed {
+    color: #41b5f4;
+  }
+  .feature.passed {
+    color: #02027f;
+  }
+  .feature.failed {
+    color: #02027f;
+  }
+  li{
+    font-family: 'Open Sans', sans-serif;
+    padding-bottom: 5px;
+  }
+  
+  
