@@ -99,14 +99,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var Feature = function Feature(_ref) {
-  var data = _ref.data;
-  return data.map(function (feature, i) {
+  var features = _ref.features;
+  return features.map(function (feature, i) {
     return React.createElement("div", {
       className: feature.result ? "passed" : "failed",
       key: i
-    }, feature.title, React.createElement(_ScenarioDiv__WEBPACK_IMPORTED_MODULE_0__["default"], {
+    }, React.createElement("h1", null, feature.title), React.createElement("ul", null, React.createElement(_ScenarioDiv__WEBPACK_IMPORTED_MODULE_0__["default"], {
       scenarios: feature.scenarios
-    }));
+    })));
   });
 };
 
@@ -123,16 +123,45 @@ var Feature = function Feature(_ref) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _StepsDiv__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./StepsDiv */ "./StepsDiv.js");
+
+
 var Scenario = function Scenario(_ref) {
   var scenarios = _ref.scenarios;
   return scenarios.map(function (scenario, i) {
-    return React.createElement("div", {
-      className: scenario.result ? "passed scenario" : "failed scenario"
-    }, scenario.title);
+    return React.createElement("li", {
+      className: scenario.result ? "passed scenario" : "failed scenario",
+      key: i
+    }, React.createElement("h2", null, scenario.title), React.createElement("ul", null, React.createElement(_StepsDiv__WEBPACK_IMPORTED_MODULE_0__["default"], {
+      steps: scenario.steps
+    })));
   });
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Scenario);
+
+/***/ }),
+
+/***/ "./StepsDiv.js":
+/*!*********************!*\
+  !*** ./StepsDiv.js ***!
+  \*********************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var Step = function Step(_ref) {
+  var steps = _ref.steps;
+  return steps.map(function (step, i) {
+    return React.createElement("li", {
+      className: step.result ? "passed step" : "failed step",
+      key: i
+    }, React.createElement("h3", null, step.title));
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Step);
 
 /***/ }),
 
@@ -191,7 +220,7 @@ var data = [{
   }]
 }];
 Object(react_dom__WEBPACK_IMPORTED_MODULE_1__["render"])(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_FeatureDiv__WEBPACK_IMPORTED_MODULE_2__["default"], {
-  data: data,
+  features: data,
   result: true
 }), document.getElementById('react-container'));
 

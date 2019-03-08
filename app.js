@@ -57,5 +57,5 @@ let data = [
     }
 ]
 
-render(<Feature data={data} result={true} />,
+render(<Feature features={data} result={true} />,
                 document.getElementById('react-container'))

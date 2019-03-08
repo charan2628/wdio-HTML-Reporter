@@ -1,10 +1,12 @@
 import Scenario from './ScenarioDiv';
 
-const Feature = ({data}) =>
-        data.map((feature, i) => 
+const Feature = ({features}) =>
+    features.map((feature, i) => 
             <div className={feature.result ? "passed": "failed"} key={i}>
-            {feature.title}
-            <Scenario scenarios={feature.scenarios}/>
+            <h1>{feature.title}</h1>
+            <ul>
+                <Scenario scenarios={feature.scenarios}/>
+            </ul>
             </div>)
 
 export default Feature
