@@ -1,7 +1,8 @@
 import React from 'react'
 import { render } from 'react-dom'
 import Feature from './components/Feature'
-import style from './style';
+import style from './assets/style.js';
+import './assets/style.css';
 
 window.React = React
 
