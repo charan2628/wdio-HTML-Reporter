@@ -1,12 +1,12 @@
 import React from 'react'
 import { render } from 'react-dom'
-import Feature from './components/Feature'
+import Container from './components/Container';
 import style from './assets/style.js';
 import './assets/style.css';
 
 window.React = React
 
-render(<Feature features={data} result={true} />,
+render(<Container data={data} />,
                 document.getElementById('react-container'))
 
 style();
