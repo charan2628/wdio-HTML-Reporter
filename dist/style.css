@@ -7,16 +7,10 @@ ul {
   .step.failed {
     color: #f44141;
   }
-  .scenario.passed {
+  .scenario {
     color: #41b5f4;
   }
-  .scenario.failed {
-    color: #41b5f4;
-  }
-  .feature.passed {
-    color: #02027f;
-  }
-  .feature.failed {
+  .feature {
     color: #02027f;
   }
   li{

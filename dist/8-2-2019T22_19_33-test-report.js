@@ -1,0 +1,2 @@
+let data = [{"title":"FEATURE:THD Checkout page automation","scenarios":[{"title":"SCENARIO: Placing Order","steps":[{"title":"WHEN: I search for an item","result":true},{"title":"AND: I add the first item available to cart","result":true},{"title":"THEN: I should have one item in cart","result":true},{"title":"THEN: I proceed to checkout page and guest sign in","result":true},{"title":"THEN: I fill the checkout page form and places the order","result":true}]}]}] 
+ window.data = data
